@@ -19,7 +19,7 @@ router.get('/search', (req, res) => {
 
 });
 
-router.get('/select/:id', (req, res) => {
+router.get('/actu/:id', (req, res) => {
 
     var id = req.params.id;
 
