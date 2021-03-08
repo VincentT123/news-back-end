@@ -2,21 +2,20 @@ var express = require('express');
 const db = require('../db/db-news');
 var router = express.Router();
 
-router.get('/search', (req, res) => {
-    let query = "Select * from actus";
+router.get('/rech/:motcle', (req, res) => {
 
-    db.query(query, (err, result) => {
-        if (err) {
-            console.log("erreur a");
-            res.redirect('/');
-        }
-        res.json({
-            status: 200,
-            result,
-            message: "Liste d'actus transmise avec succès"
-        })
-    });
+    var motcle = req.params.motcle;
 
+    db.query('SELECT * FROM actus WHERE titre LIKE "%' + motcle + '%" OR texte LIKE "%' + motcle + '%"',
+        function (err, rows) {
+            if (err) throw err;
+
+            res.json({
+                rows,
+                status: 200,
+                message: "liste de recherche transmise avec succès"
+            })
+        });
 });
 
 router.get('/actu/:id', (req, res) => {
