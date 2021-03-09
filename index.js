@@ -12,6 +12,8 @@ var app = express();
 var person = require('./routes/person');
 // Appel du module router actus.js
 var actus = require('./routes/actus');
+// Appel du module router actus.js
+var users = require('./routes/users');
 // Appel du module router post.js
 var post = require('./routes/post');
 // Appel du module router person.js
@@ -169,6 +171,8 @@ app.use('/', person);
 
 // 
 app.use('/actus', actus);
+// 
+app.use('/users', users);
 
 // http://localhost:8080/post
 // http://localhost:8080/post/1 
