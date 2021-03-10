@@ -221,14 +221,7 @@ app.use('/employes', employes);
 
 
 
-// var server = {
-//   port: 8080
-// };
+var server = process.env.PORT || 8080;
 
-// app.listen(server.port, () => console.log(`Server started, listening port: ${server.port}`));
+app.listen(server, () => console.log(`Server started, listening port: ${server}`));
 
-var server_port = process.env.YOUR_PORT || process.env.PORT || 8088;
-
-app.listen(server_port, function() {​​
-console.log('Listening on port %d', server_port);
-}​​);
