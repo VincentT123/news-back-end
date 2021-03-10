@@ -2,7 +2,7 @@ const { response } = require('express');
 var express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
-const handleErrors = require('./middleware/handleErrors');
+// const handleErrors = require('./middleware/handleErrors');
 var session = require('express-session');
 var flash = require('connect-flash');
 
@@ -49,7 +49,7 @@ app.use((err, req, res, next) => {
 });
 
 // Utilisation de la fonction middleware de gestion des erreurs par défaut
-app.use(handleErrors);
+//app.use(handleErrors);
 
 // MongoDB est une base de données NoSQL orientée document utilisée 
 // pour le stockage de données à haut volume.
