@@ -1,14 +1,14 @@
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 
-let db;
+// let db;
 
-module.exports = function connection(){
-    if(!db){
-        db = mongoose.createConnection('mongodb://localhost/formation', {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        });
-    }
+// module.exports = function connection(){
+//     if(!db){
+//         db = mongoose.createConnection('mongodb://localhost/formation', {
+//             useNewUrlParser: true,
+//             useUnifiedTopology: true
+//         });
+//     }
 
-    return db;
-}
+//     return db;
+// }
